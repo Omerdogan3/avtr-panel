@@ -7,6 +7,8 @@ import PageHeader from 'src/components/PageHeader';
 import ProtectedPage from 'src/components/ProtectedPage';
 import {DRAWER_TYPES} from "src/constants";
 import PlusIcon from '@rsuite/icons/Plus';
+import EditIcon from '@rsuite/icons/Edit';
+import CloseIcon from '@rsuite/icons/Close';
 import api from 'src/api';
 import NewShape from './NewShape';
 import EditShape from './EditShape';
@@ -17,6 +19,7 @@ const shapes = ["Brows","Eye","Lips","Head","Hairs"]
 function BlendShapes({id}) {
   const [open, setOpen] = useState(null);
   const [open2, setOpen2] = useState(false);
+  const [shapeid, setShapeId] = useState(null);
   const [blendShapes, setBlendShapes] = useState([]);
 
     useEffect(()=>{
@@ -26,6 +29,15 @@ function BlendShapes({id}) {
     const getShapes = async()=>{
       const shapesres = await api.getAllBlendShapes()
       setBlendShapes(shapesres)
+    }
+    const editShapeDrawer= (id)=>{
+      setOpen2(true)
+      setShapeId(id)
+    }
+
+    const removeShape = async(id)=>{
+      const res = await api.removeShape(id)
+      getShapes()
     }
 
   return (
@@ -40,11 +52,10 @@ function BlendShapes({id}) {
       />
       ))}
         <EditShape
-          name={"Head"}
-          rewardId={"0"}
+          id={shapeid}
           open={open2}
-          onSubmit={()=>alert('submit')}
-          setOpen={()=>setOpen2(!open2)}
+          onSubmit={()=>getShapes()}
+          setOpen={()=>setOpen2(false)}
         />
       <PageHeader 
         drawerType={DRAWER_TYPES.NEW_REWARD}
@@ -73,8 +84,9 @@ function BlendShapes({id}) {
                   shaded 
                   header={
                     <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                        <p style={{fontWeight: "600",fontSize: 15}}>{shape._id}</p>
-                      <IconButton onClick={()=> setOpen(shape._id)} style={{marginLeft: 12}} icon={<PlusIcon />} circle size="xs"/>
+                        <p style={{fontWeight: "600",fontSize: 15}}>{shape.title?shape.title:shape._id}</p>
+                      <IconButton onClick={()=> editShapeDrawer(shape._id)} style={{marginLeft: 12}} icon={<EditIcon />} circle size="xs"/>
+                      <IconButton onClick={()=> removeShape(shape._id)} style={{marginLeft: 12}} icon={<CloseIcon />} circle size="xs"/>
                     </div>
                   }
                   eventKey={index} 

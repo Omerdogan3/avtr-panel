@@ -71,9 +71,9 @@ class DataProvider {
 
   async removeShape(shapeId){
     try{
-      const res = await axios.delete(BASE_URL + "/" + REMOVE_SHAPES + "/"+ shapeId)
+      const res = await axios.delete(BASE_URL + "/" + REMOVE_SHAPES + "/" + shapeId)
       if(res.data.status){
-        notifMessage(res.data.shapes, NOTIF_TYPES.SUCCESS)
+        notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
       }else{
         notifMessage(res.data.message, NOTIF_TYPES.ERROR)
       }
@@ -88,7 +88,7 @@ class DataProvider {
       const res = await axios.get(BASE_URL + "/" + GET_SHAPE_BYID + "/" + shapeId)
       if(res.data.status){
         notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
-        return res.data.shape
+        return res.data
       }else{
         notifMessage(res.data.message, NOTIF_TYPES.ERROR)
       }
@@ -98,9 +98,13 @@ class DataProvider {
     }
   }
 
-  async updateShape(shapeData){
+  async updateShape(shapeId,shapeData){
+    delete shapeData['_id']; 
+    delete shapeData['type']; 
+    delete shapeData['creationTime']; 
+    delete shapeData['status']; 
     try{
-      const res = await axios.put(BASE_URL + "/" + UPDATE_SHAPES, shapeData)
+      const res = await axios.put(BASE_URL + "/" + UPDATE_SHAPES + "/" + shapeId, shapeData)
       if(res.data.status){
         notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
       }else{

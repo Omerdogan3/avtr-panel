@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Divider, Drawer, SelectPicker, Button, Form, InputGroup, InputNumber, Checkbox, toaster } from 'rsuite';
+import {Divider, Drawer, Button, Form, InputGroup, Input } from 'rsuite';
 import 'rsuite/styles/index.less';
 import Slider from '@mui/material/Slider';
 import api from '../../../api';
@@ -11,7 +11,7 @@ function NewShape({ onSubmit,shapename,setOpen,open}) {
 
 useEffect(()=>{
   if(shapename!==null){
-  eval(shapename).map((val)=>{
+    eval(shapename).map((val)=>{
       setValues(val.values.map((e,i)=>{return  Object.keys(e)}))
       val.values.map((e,i)=>{setShape(shape=>({...shape,[Object.keys(e)]:0}))})
     })
@@ -43,24 +43,42 @@ const handleNewShape=async()=>{
       <Drawer.Body>
 
       <Form fluid>
-
-        {values&& values.map((defshapename)=>(
+        <p style={{paddingBottom: 8}}>Shape Title</p>
+          <InputGroup>
+            <Input
+              onChange={(val)=>setShape(shape=>({...shape,['title']:val}))}
+              style={{ width: 300 }}/>
+          </InputGroup>
+        <Divider/>
+        {values&& values.map((defshapename,i)=>(
           <>
         <p>{defshapename}</p>
-        <Slider
+        {defshapename.includes(`C_Hairs${i+1}`)?
+          <Slider
           size="small"
           onChange={(e,val)=>setShape(shape=>({...shape,[defshapename]:val}))}
-          min={0.0}
-          max={1.0}
-          step={0.1}
+          min={0}
+          max={1}
           marks
-          defaultValue={0.0}
+          defaultValue={0}
           aria-label="Small"
-        valueLabelDisplay="auto"
+         valueLabelDisplay="auto"
         />
+         :
+         <Slider
+         size="small"
+        onChange={(e,val)=>setShape(shape=>({...shape,[defshapename]:val}))}
+         min={0.0}
+         max={1.0}
+         step={0.1}
+         marks
+         defaultValue={0.0}
+         aria-label="Small"
+        valueLabelDisplay="auto"
+       />
+         }
         </>
         ))}
-        <Divider/>
       
 
       </Form>
@@ -72,3 +90,4 @@ const handleNewShape=async()=>{
 }
 
 export default NewShape;
+ 

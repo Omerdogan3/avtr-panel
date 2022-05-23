@@ -1,56 +1,86 @@
 import React, { useState, useEffect } from 'react';
-import {Divider, Drawer, SelectPicker, Button, Form, InputGroup, InputNumber, Checkbox, toaster } from 'rsuite';
+import {Drawer,Button, Form ,InputGroup,Input,Divider} from 'rsuite';
 import Slider from '@mui/material/Slider';
-
+import _ from "lodash"
 import api from '/src/api';
 import 'rsuite/styles/index.less';
-import syncGames from 'src/utils/syncGames';
-import {useSelector} from 'react-redux'
 
-import {EVENT_TYPES, COMPARISON_TYPES} from "src/constants"; 
+function EditShape({open, setOpen, onSubmit,id}) {
+  const [shapes,setShapes] = useState([])
+  const [shapeId,setShapeId] = useState()
 
-function EditShape({open, setOpen, onSubmit,name}) {
+useEffect(() => {
+  if (id !== null && open) {
+    getShape();
+  }
+}, [id, open]);
 
+const getShape = async () => {
+  const shape = await api.getShapeById(id);
+  setShapes(shape);
+  setShapeId(shape['_id'])
+};
 
+const updateShape = async()=>{
+  await api.updateShape(shapeId,shapes)
+  setOpen(false)
+  onSubmit()
+}
   return (
     <Drawer 
       size={"xs"} 
       placement={"left"} 
       open={open} 
-      onClose={() => setOpen(false)}>
+      onClose={() => setOpen()}>
       <Drawer.Header>
-        <Drawer.Title>Edit {name}</Drawer.Title>
+        <Drawer.Title>Edit {shapes.title}</Drawer.Title>
         <Drawer.Actions>
-          <Button onClick={() => alert('new shape')} appearance="primary">
+          <Button onClick={() => updateShape()} appearance="primary">
             Save
           </Button>
         </Drawer.Actions>
       </Drawer.Header>
       <Drawer.Body>
-
       <Form fluid>
-
-
-      <Slider
-        size="small"
-        defaultValue={70}
-        aria-label="Small"
-        valueLabelDisplay="auto"
-      />
-
-
-
-
+      <p style={{paddingBottom: 8}}>Shape Title</p>
+          <InputGroup>
+            <Input
+              onChange={(val)=>setShapes(shapes=>({...shapes,['title']:val}))}
+              style={{ width: 300 }}/>
+          </InputGroup>
         <Divider/>
-        <Checkbox 
-          checked={true} 
-          >
-            Notification on reward
-        </Checkbox>
-
+   {  
+    _.times(11,String).map((e,i)=>(
+      <>
+         <p>{`C_${shapes.type}${i+1}: `+shapes[`C_${shapes.type}${i+1}`]}</p>
+         {shapes.type=='Hairs'?
+          <Slider
+          size="small"
+          onChange={(e,val)=>setShapes(shapes=>({...shapes,[`C_${shapes.type}${i+1}`]:val}))}
+          min={0}
+          max={1}
+          marks
+          defaultValue={0}
+          aria-label="Small"
+         valueLabelDisplay="auto"
+        />
+         :
+         <Slider
+         size="small"
+         onChange={(e,val)=>setShapes(shapes=>({...shapes,[`C_${shapes.type}${i+1}`]:val}))}
+         min={0.0}
+         max={1.0}
+         step={0.1}
+         marks
+         defaultValue={0.0}
+         aria-label="Small"
+        valueLabelDisplay="auto"
+       />
+         }
+      </>
+     ))
+    }
       </Form>
-
-
       </Drawer.Body>
     </Drawer>
   );
