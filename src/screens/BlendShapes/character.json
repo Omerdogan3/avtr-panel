@@ -1,0 +1,869 @@
+{
+    "characterConfig": [
+        {
+            "blendShapeLayer": "Head",
+            "blendShapeValues": [
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Jawline1",
+                            "weight": 1
+                        },
+                        {
+                            "name": "C_Jawline2",
+                            "weight": 0.4
+                        },
+                        {
+                            "name": "C_Jawline3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline11",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Jawline1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline3",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Jawline4",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Jawline5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline11",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Jawline1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline5",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Jawline6",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Jawline7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Jawline11",
+                            "weight": 0
+                        }
+                    ]
+                }
+            ],
+            "colorLayer": "Head",
+            "hasColor": true,
+            "isBlendShape": true,
+            "layerColorValues": [
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Aqua Blue"
+                },
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Dark Red"
+                }
+            ],
+            "layerNameValues": [
+                {
+                    "isPremium": false,
+                    "layer": "layer_1"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "layer_2"
+                }
+            ],
+            "selectedBlendShape": [
+                {
+                    "name": "C_Jawline1",
+                    "weight": 1
+                },
+                {
+                    "name": "C_Jawline2",
+                    "weight": 0.4
+                },
+                {
+                    "name": "C_Jawline3",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline4",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline5",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline6",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline7",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline8",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline9",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline10",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Jawline11",
+                    "weight": 0
+                }
+            ],
+            "selectedColor": "#392A22FF",
+            "title": "Head"
+        },
+        {
+            "blendShapeLayer": "eyes",
+            "blendShapeValues": [
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Eyes1",
+                            "weight": 1
+                        },
+                        {
+                            "name": "C_Eyes2",
+                            "weight": 0.4
+                        },
+                        {
+                            "name": "C_Eyes3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes11",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Eyes1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes3",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Eyes4",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Eyes5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes11",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Eyes1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes5",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Eyes6",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Eyes7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Eyes11",
+                            "weight": 0
+                        }
+                    ]
+                }
+            ],
+            "colorLayer": "eyes",
+            "hasColor": true,
+            "isBlendShape": true,
+            "layerColorValues": [
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Aqua Blue"
+                },
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Dark Red"
+                }
+            ],
+            "layerNameValues": [
+                {
+                    "isPremium": false,
+                    "layer": "layer_1"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "layer_2"
+                }
+            ],
+            "selectedBlendShape": [
+                {
+                    "name": "C_Eyes1",
+                    "weight": 1
+                },
+                {
+                    "name": "C_Eyes2",
+                    "weight": 0.4
+                },
+                {
+                    "name": "C_Eyes3",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes4",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes5",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes6",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes7",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes8",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes9",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes10",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Eyes11",
+                    "weight": 0
+                }
+            ],
+            "selectedColor": "#392A22FF",
+            "title": "Eyes"
+        },
+        {
+            "blendShapeLayer": "Eyebrows",
+            "blendShapeValues": [
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Brows1",
+                            "weight": 1
+                        },
+                        {
+                            "name": "C_Brows2",
+                            "weight": 0.4
+                        },
+                        {
+                            "name": "C_Brows3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows11",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Brows1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows3",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Brows4",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Brows5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows8",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows9",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows10",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Brows11",
+                            "weight": 0
+                        }
+                    ]
+                }
+            ],
+            "colorLayer": "Eyebrows",
+            "hasColor": true,
+            "isBlendShape": false,
+            "layerColorValues": [
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Aqua Blue"
+                },
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Dark Red"
+                }
+            ],
+            "layerNameValues": [
+                {
+                    "isPremium": false,
+                    "layer": "layer_1"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "layer_2"
+                }
+            ],
+            "selectedBlendShape": [
+                {
+                    "name": "C_Brows1",
+                    "weight": 1
+                },
+                {
+                    "name": "C_Brows2",
+                    "weight": 0.4
+                },
+                {
+                    "name": "C_Brows3",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows4",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows5",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows6",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows7",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows8",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows9",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows10",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Brows11",
+                    "weight": 0
+                }
+            ],
+            "selectedColor": "#392A22FF",
+            "title": "Eyebrows"
+        },
+        {
+            "blendShapeLayer": "Lips",
+            "blendShapeValues": [
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Lips1",
+                            "weight": 1
+                        },
+                        {
+                            "name": "C_Lips2",
+                            "weight": 0.4
+                        },
+                        {
+                            "name": "C_Lips3",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips4",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips8",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "C_Lips1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips3",
+                            "weight": 0.7
+                        },
+                        {
+                            "name": "C_Lips4",
+                            "weight": 0.8
+                        },
+                        {
+                            "name": "C_Lips5",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips6",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips7",
+                            "weight": 0
+                        },
+                        {
+                            "name": "C_Lips8",
+                            "weight": 0
+                        }
+                    ]
+                }
+            ],
+            "colorLayer": "Lips",
+            "hasColor": true,
+            "isBlendShape": false,
+            "layerColorValues": [
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Aqua Blue"
+                },
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Dark Red"
+                }
+            ],
+            "layerNameValues": [
+                {
+                    "isPremium": false,
+                    "layer": "layer_1"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "layer_2"
+                }
+            ],
+            "selectedBlendShape": [
+                {
+                    "name": "C_Lips1",
+                    "weight": 1
+                },
+                {
+                    "name": "C_Lips2",
+                    "weight": 0.4
+                },
+                {
+                    "name": "C_Lips3",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Lips4",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Lips5",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Lips6",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Lips7",
+                    "weight": 0
+                },
+                {
+                    "name": "C_Lips8",
+                    "weight": 0
+                }
+            ],
+            "selectedColor": "#392A22FF",
+            "title": "Lips"
+        },
+        {
+            "blendShapeLayer": "hair",
+            "blendShapeValues": [
+                {
+                    "blendShape": [
+                        {
+                            "name": "hair_1",
+                            "weight": 1
+                        },
+                        {
+                            "name": "hair_2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "hair_3",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "hair_1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "hair_2",
+                            "weight": 1
+                        },
+                        {
+                            "name": "hair_3",
+                            "weight": 0
+                        }
+                    ]
+                },
+                {
+                    "blendShape": [
+                        {
+                            "name": "hair_1",
+                            "weight": 0
+                        },
+                        {
+                            "name": "hair_2",
+                            "weight": 0
+                        },
+                        {
+                            "name": "hair_3",
+                            "weight": 1
+                        }
+                    ]
+                }
+            ],
+            "colorLayer": "hair",
+            "hasColor": true,
+            "isBlendShape": false,
+            "layerColorValues": [
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Aqua Blue"
+                },
+                {
+                    "color": "#341245",
+                    "isPremium": false,
+                    "layerColorId": "color_1",
+                    "title": "Dark Red"
+                }
+            ],
+            "layerNameValues": [
+                {
+                    "isPremium": false,
+                    "layer": "hair_1"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "hair_2"
+                },
+                {
+                    "isPremium": true,
+                    "layer": "hair_3"
+                }
+            ],
+            "selectedBlendShape": [
+                {
+                    "name": "hair_1",
+                    "weight": 1
+                },
+                {
+                    "name": "hair_2",
+                    "weight": 0
+                },
+                {
+                    "name": "hair_3",
+                    "weight": 0
+                }
+            ],
+            "selectedColor": "#392A22FF",
+            "title": "Hair"
+        }
+    ],
+    "status": true
+}
