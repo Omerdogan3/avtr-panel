@@ -93,7 +93,7 @@ function BlendShapes({id}) {
                   id={index}>
                   {
                   _.times(11,String).map((e,i)=>(
-                      <p>{`C_${shape.type}${i+1}: ` + shape[`C_${shape.type}${i+1}`]}</p>
+                      <p>{shape.type=='Head'?`C_Jawline${i+1}: ` + shape[`C_Jawline${i+1}`]:`C_${shape.type}${i+1}: ` + shape[`C_${shape.type}${i+1}`]}</p>
                   ))
                     }
               </Panel>
