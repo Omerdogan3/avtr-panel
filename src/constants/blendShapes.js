@@ -16,7 +16,7 @@ export const Head = [
   },
 ];
 
-export const Eye = [
+export const Eyes = [
   {
     values: [
       { C_Eyes1: 0 },

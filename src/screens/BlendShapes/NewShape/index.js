@@ -3,7 +3,7 @@ import {Divider, Drawer, Button, Form, InputGroup, Input } from 'rsuite';
 import 'rsuite/styles/index.less';
 import Slider from '@mui/material/Slider';
 import api from '../../../api';
-const {Head,Eye,Lips,Brows,Hairs} = require('../../../constants/blendShapes')
+const {Head,Eyes,Lips,Brows,Hairs} = require('../../../constants/blendShapes')
 
 function NewShape({ onSubmit,shapename,setOpen,open}) {
   const [shape,setShape]=useState(null)
@@ -53,7 +53,7 @@ const handleNewShape=async()=>{
         {values&& values.map((defshapename,i)=>(
           <>
         <p>{defshapename}</p>
-        {defshapename.includes(`C_Hairs${i+1}`)?
+        {defshapename.includes(`head_${i+1}`)?
           <Slider
           size="small"
           onChange={(e,val)=>setShape(shape=>({...shape,[defshapename]:val}))}

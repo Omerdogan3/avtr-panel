@@ -14,7 +14,7 @@ import NewShape from './NewShape';
 import EditShape from './EditShape';
 
 const {Column, HeaderCell, Cell} = Table;
-const shapes = ["Brows","Eye","Lips","Head","Hairs"]
+const shapes = ["Brows","Eyes","Lips","Head","Hairs"]
 
 function BlendShapes({id}) {
   const [open, setOpen] = useState(null);
