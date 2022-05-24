@@ -52,11 +52,29 @@ const updateShape = async()=>{
    {  
     _.times(11,String).map((e,i)=>(
       <>
-         <p>{shapes.type=='Head'?`C_Jawline${i+1}: `+shapes[`C_Jawline${i+1}`]:`C_${shapes.type}${i+1}: `+shapes[`C_${shapes.type}${i+1}`]}</p>
+         <p>{
+         shapes.type=='Head'?
+         `C_Jawline${i+1}: `+shapes[`C_Jawline${i+1}`]:
+         shapes.type=='Eye'?
+         `C_Eyes${i+1}: `+shapes[`C_Eyes${i+1}`]:
+         shapes.type=='Eyebrows'?
+         `C_Brows${i+1}: `+shapes[`C_Brows${i+1}`]:
+         shapes.type=='Hairs'?
+         `hair_${i+1}: `+shapes[`hair_${i+1}`]:
+         `C_${shapes.type}${i+1}: `+shapes[`C_${shapes.type}${i+1}`]
+         }
+         </p>
          {shapes.type=='Hairs'?
           <Slider
           size="small"
-          onChange={(e,val)=>setShapes(shapes=>({...shapes,[shapes.type=='Head'?`C_Jawline${i+1}`:`C_${shapes.type}${i+1}`]:val}))}
+          onChange={(e,val)=>setShapes(shapes=>(
+            {...shapes,[
+            shapes.type=='Head'?`C_Jawline${i+1}`:
+            shapes.type=='Eye'?`C_Eyes${i+1}`:
+            shapes.type=='Eyebrows'?`C_Brows${i+1}`:
+            shapes.type=='Hairs'?`hair_${i+1}`:
+            `C_${shapes.type}${i+1}`]:val}
+            ))}
           min={0}
           max={1}
           marks
@@ -67,7 +85,14 @@ const updateShape = async()=>{
          :
          <Slider
          size="small"
-         onChange={(e,val)=>setShapes(shapes=>({...shapes,[shapes.type=='Head'?`C_Jawline${i+1}`:`C_${shapes.type}${i+1}`]:val}))}
+         onChange={(e,val)=>setShapes(shapes=>(
+          {...shapes,[
+          shapes.type=='Head'?`C_Jawline${i+1}`:
+          shapes.type=='Eye'?`C_Eyes${i+1}`:
+          shapes.type=='Eyebrows'?`C_Brows${i+1}`:
+          shapes.type=='Hairs'?`hair_${i+1}`:
+          `C_${shapes.type}${i+1}`]:val}
+          ))}
          min={0.0}
          max={1.0}
          step={0.1}

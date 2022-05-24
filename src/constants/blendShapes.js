@@ -1,3 +1,15 @@
+/**
+ * Head
+ * C_Jawline1
+ * Eye
+ * C_Eyes1
+ * Eyebrows
+ * C_Brows1
+ * Lips
+ * Lips
+ * Hairs
+ * hair
+ */
 export const Head = [
   {
     values: [
@@ -16,7 +28,7 @@ export const Head = [
   },
 ];
 
-export const Eyes = [
+export const Eye = [
   {
     values: [
       { C_Eyes1: 0 },
@@ -69,7 +81,7 @@ export const Hairs = [
     ],
   },
 ];
-export const Brows = [
+export const Eyebrows = [
   {
     values: [
       { C_Brows1: 0 },
