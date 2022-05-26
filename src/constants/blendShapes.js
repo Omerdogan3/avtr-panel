@@ -72,11 +72,6 @@ export const Hairs = [
       { hair_3: 0 },
       { hair_4: 0 },
       { hair_5: 0 },
-      { hair_6: 0 },
-      { hair_7: 0 },
-      { hair_8: 0 },
-      { hair_9: 0 },
-      { hair_10: 0 },
     ],
   },
 ];

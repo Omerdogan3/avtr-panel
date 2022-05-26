@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useRef, useEffect } from 'react';
 import {Divider, Drawer, Button, Form, InputGroup, Input } from 'rsuite';
 import 'rsuite/styles/index.less';
 import Slider from '@mui/material/Slider';
@@ -9,7 +9,7 @@ const {Head,Eye,Lips,Eyebrows,Hairs} = require('../../../constants/blendShapes')
 function NewShape({ onSubmit,shapename,setOpen,open}) {
   const [shape,setShape]=useState(null)
   const [values,setValues]=useState()
-  const [model,setModel]=useState(0)
+  const inputRef = useRef(null);
 
 useEffect(()=>{
   if(shapename!==null){
@@ -28,6 +28,11 @@ const handleNewShape=async()=>{
   setValues(null)
   setShape(null)
 }
+
+const handleShape= (defshapename,val,i)=>{
+  inputRef.current.editModel(shapename,defshapename,val,i)
+  setShape(shape=>({...shape,[defshapename]:val}))
+}
   return (
     <Drawer 
       size={"xs"} 
@@ -45,18 +50,8 @@ const handleNewShape=async()=>{
       <Drawer.Body>
 
       <Form fluid>
-      <Model modelprop={model}> </Model>
-      <Slider
-          size="small"
-          onChange={(e,val)=>setModel(val)}
-          min={0}
-          max={1}
-          marks
-          defaultValue={0}
-          aria-label="Small"
-         valueLabelDisplay="auto"
-        />
-        <p style={{paddingBottom: 8}}>Shape Title</p>
+      <Model ref={inputRef}></Model>
+       <p style={{paddingBottom: 8}}>Shape Title</p>
           <InputGroup>
             <Input
               onChange={(val)=>setShape(shape=>({...shape,['title']:val}))}
@@ -69,7 +64,7 @@ const handleNewShape=async()=>{
         {defshapename.includes(`hair_${i+1}`)?
           <Slider
           size="small"
-          onChange={(e,val)=>setShape(shape=>({...shape,[defshapename]:val}))}
+          onChange={(e,val)=>handleShape(defshapename,val,i)}
           min={0}
           max={1}
           marks
@@ -80,7 +75,7 @@ const handleNewShape=async()=>{
          :
          <Slider
          size="small"
-        onChange={(e,val)=>setShape(shape=>({...shape,[defshapename]:val}))}
+        onChange={(e,val)=>handleShape(defshapename,val,i)}
          min={0.0}
          max={1.0}
          step={0.1}
