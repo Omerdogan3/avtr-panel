@@ -55,9 +55,9 @@ const updateShape = async()=>{
          <p>{
          shapes.type=='Head'?
          `C_Jawline${i+1}: `+shapes[`C_Jawline${i+1}`]:
-         shapes.type=='Eye'?
+         shapes.type=='Eyes'?
          `C_Eyes${i+1}: `+shapes[`C_Eyes${i+1}`]:
-         shapes.type=='Eyebrows'?
+         shapes.type=='Brows'?
          `C_Brows${i+1}: `+shapes[`C_Brows${i+1}`]:
          shapes.type=='Hairs'?
          `hair_${i+1}: `+shapes[`hair_${i+1}`]:
@@ -70,8 +70,8 @@ const updateShape = async()=>{
           onChange={(e,val)=>setShapes(shapes=>(
             {...shapes,[
             shapes.type=='Head'?`C_Jawline${i+1}`:
-            shapes.type=='Eye'?`C_Eyes${i+1}`:
-            shapes.type=='Eyebrows'?`C_Brows${i+1}`:
+            shapes.type=='Eyes'?`C_Eyes${i+1}`:
+            shapes.type=='Brows'?`C_Brows${i+1}`:
             shapes.type=='Hairs'?`hair_${i+1}`:
             `C_${shapes.type}${i+1}`]:val}
             ))}
@@ -88,8 +88,8 @@ const updateShape = async()=>{
          onChange={(e,val)=>setShapes(shapes=>(
           {...shapes,[
           shapes.type=='Head'?`C_Jawline${i+1}`:
-          shapes.type=='Eye'?`C_Eyes${i+1}`:
-          shapes.type=='Eyebrows'?`C_Brows${i+1}`:
+          shapes.type=='Eyes'?`C_Eyes${i+1}`:
+          shapes.type=='Brows'?`C_Brows${i+1}`:
           shapes.type=='Hairs'?`hair_${i+1}`:
           `C_${shapes.type}${i+1}`]:val}
           ))}

@@ -1,10 +1,10 @@
 import React, { useEffect,useRef, useState, useImperativeHandle, forwardRef } from 'react'
 import * as THREE from 'three';
 import { GLTFLoader } from './GLTFLoader.js';
+import {OrbitControls} from './OrbitControls';
 
  function Model(props,ref) {
   const [modelx,setModelx]=useState()
-  const [slide,setSlide]=useState(0.0)
 
   useEffect(()=>{
     init();
@@ -23,7 +23,7 @@ import { GLTFLoader } from './GLTFLoader.js';
 
   function init() {
     camera = new THREE.PerspectiveCamera(40, 250/300 , 0.25, 100 );
-    camera.position.set( 0, 0.2, 0.8 );
+    camera.position.set( -0.2, 0.2, 0.8 );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene = new THREE.Scene();
     clock = new THREE.Clock();
@@ -47,14 +47,21 @@ import { GLTFLoader } from './GLTFLoader.js';
     renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true  } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setClearColor( 0x000000, 0 );
-    renderer.setSize(280, 300);
+    renderer.setSize(300, 350);
     renderer.outputEncoding = THREE.sRGBEncoding;
+     //controls
+     const controls = new OrbitControls( camera, renderer.domElement );
+     controls.enablePan = false;
+     controls.enableZoom = false;
+     controls.target.set( 0,0,0 );
+     controls.update();
+
     box.current.appendChild( renderer.domElement );
   }
 	function createGUI(model,animations,val2,defshapename,shapex,shapeindex) {
     // expressions
     console.log(model)
-    //Head,Eye,Lips,Eyebrows,Hairs
+    //Head,Eyes,Lips,Brows,Hairs
     const hair0 = model.getObjectByName( 'Hair_1' );
     const hair2 = model.getObjectByName( 'Hair_2' );
     const hair3 = model.getObjectByName( 'Hair_3' );
@@ -65,13 +72,13 @@ import { GLTFLoader } from './GLTFLoader.js';
     hair3.visible=false
     hair4.visible=false
     hair5.visible=false
-    if(shapex=='Eyebrows'){
-    const shape = model.getObjectByName( shapex );
+    if(shapex=='Brows'){
+    const shape = model.getObjectByName( 'Eyebrows' );
     const exp = Object.keys(shape.morphTargetDictionary).map((e,i)=>{return e==defshapename?i:null})
     const ind = parseFloat(exp.toString().replaceAll(',',''))
     shape.morphTargetInfluences[ind]=val2
    }
-   if(shapex=='Eye'){
+   if(shapex=='Eyes'){
     const head = model.getObjectByName( 'Head' );
     const plane = head.children[0];
     plane.morphTargetInfluences[shapeindex]=val2
@@ -96,7 +103,7 @@ import { GLTFLoader } from './GLTFLoader.js';
 
   return (
     <>
-   <div ref={box}></div>
+   <div ref={box} style={{overflow:'visible',zIndex:1000}}></div>
    </>
   )
 }

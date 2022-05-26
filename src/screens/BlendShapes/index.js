@@ -14,21 +14,8 @@ import NewShape from './NewShape';
 import EditShape from './EditShape';
 import Model from '../../components/Model';
 
-/**
- * Head
- * C_Jawline1
- * Eye
- * C_Eyes1
- * Eyebrows
- * C_Brows1
- * Lips
- * Lips
- * Hairs
- * hair
- */
-
 const {Column, HeaderCell, Cell} = Table;
-const shapes = ["Eyebrows","Eye","Lips","Head","Hairs"]
+const shapes = ["Brows","Eyes","Lips","Head","Hairs"]
 
 function BlendShapes({id}) {
   const [open, setOpen] = useState(null);
@@ -108,9 +95,9 @@ function BlendShapes({id}) {
                   _.times(11,String).map((e,i)=>(
                       <p>{shape.type=='Head'?
                       `C_Jawline${i+1}: ` + shape[`C_Jawline${i+1}`]:
-                      shape.type=='Eye'?
+                      shape.type=='Eyes'?
                       `C_Eyes${i+1}: ` + shape[`C_Eyes${i+1}`]:
-                      shape.type=='Eyebrows'?
+                      shape.type=='Brows'?
                       `C_Brows${i+1}: ` + shape[`C_Brows${i+1}`]:
                       shape.type=='Hairs'?
                       `hair_${i+1}: ` + shape[`hair_${i+1}`]:

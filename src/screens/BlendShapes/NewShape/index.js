@@ -4,7 +4,7 @@ import 'rsuite/styles/index.less';
 import Slider from '@mui/material/Slider';
 import api from '../../../api';
 import Model from '../../../components/Model';
-const {Head,Eye,Lips,Eyebrows,Hairs} = require('../../../constants/blendShapes')
+const {Head,Eyes,Lips,Brows,Hairs} = require('../../../constants/blendShapes')
 
 function NewShape({ onSubmit,shapename,setOpen,open}) {
   const [shape,setShape]=useState(null)

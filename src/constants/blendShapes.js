@@ -28,7 +28,7 @@ export const Head = [
   },
 ];
 
-export const Eye = [
+export const Eyes = [
   {
     values: [
       { C_Eyes1: 0 },
@@ -75,7 +75,7 @@ export const Hairs = [
     ],
   },
 ];
-export const Eyebrows = [
+export const Brows = [
   {
     values: [
       { C_Brows1: 0 },
