@@ -77,7 +77,6 @@ export const Hairs = [
       { hair_8: 0 },
       { hair_9: 0 },
       { hair_10: 0 },
-      { hair_11: 0 },
     ],
   },
 ];

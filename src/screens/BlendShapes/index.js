@@ -12,6 +12,7 @@ import CloseIcon from '@rsuite/icons/Close';
 import api from 'src/api';
 import NewShape from './NewShape';
 import EditShape from './EditShape';
+import Model from '../../components/Model';
 
 /**
  * Head
@@ -74,7 +75,6 @@ function BlendShapes({id}) {
         drawerType={DRAWER_TYPES.NEW_REWARD}
         title="BlendShapes"/>
       <Content style={{paddingLeft: 40, paddingRight: 40}}>
-
         <PanelGroup accordion bordered>
           {
             shapes.map((shapes, index)=> {

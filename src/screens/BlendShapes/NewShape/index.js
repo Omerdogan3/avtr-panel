@@ -3,11 +3,13 @@ import {Divider, Drawer, Button, Form, InputGroup, Input } from 'rsuite';
 import 'rsuite/styles/index.less';
 import Slider from '@mui/material/Slider';
 import api from '../../../api';
+import Model from '../../../components/Model';
 const {Head,Eye,Lips,Eyebrows,Hairs} = require('../../../constants/blendShapes')
 
 function NewShape({ onSubmit,shapename,setOpen,open}) {
   const [shape,setShape]=useState(null)
   const [values,setValues]=useState()
+  const [model,setModel]=useState(0)
 
 useEffect(()=>{
   if(shapename!==null){
@@ -43,6 +45,17 @@ const handleNewShape=async()=>{
       <Drawer.Body>
 
       <Form fluid>
+      <Model modelprop={model}> </Model>
+      <Slider
+          size="small"
+          onChange={(e,val)=>setModel(val)}
+          min={0}
+          max={1}
+          marks
+          defaultValue={0}
+          aria-label="Small"
+         valueLabelDisplay="auto"
+        />
         <p style={{paddingBottom: 8}}>Shape Title</p>
           <InputGroup>
             <Input
