@@ -3,13 +3,11 @@ import axios from "axios";
 import notifMessage from 'src/utils/notifMessage';
 import {NOTIF_TYPES, ERROR_CONSTANTS, IMAGE_UPLOAD_TYPES} from 'src/constants';
 import generateHeaders from 'src/utils/generateHeaders';
-import {store} from 'src/store/configureStore';
-import moment from 'moment';
-import {setTrendsData} from 'src/store/actions/trendsActions';
-import { setDownloadsData } from '../store/actions/trendsActions';
+ 
 
 const {GET_SHAPES,REMOVE_SHAPES,UPDATE_SHAPES,GET_SHAPE_BYID,NEW_BLEND_SHAPE,BASE_URL,
-  BLOCK_USER, GET_PANEL_VALUES, SET_PANEL_VALUE, CHECK_PANEL_USER,PANEL_USERS, 
+  NEW_COLOR,GET_COLORS,REMOVE_COLORS,UPDATE_COLORS,GET_COLORS_BYID,  
+ BLOCK_USER, GET_PANEL_VALUES, SET_PANEL_VALUE, CHECK_PANEL_USER,PANEL_USERS, 
   } = ApiConstants;
 
 class DataProvider {  
@@ -116,6 +114,86 @@ class DataProvider {
     }
   }
 
+  /**
+   * COLORS  
+   * */
+ 
+   async newColor(colorData){
+    try{
+      const res = await axios.post(BASE_URL + "/" + NEW_COLOR, colorData)
+      if(res.data.status){
+        notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
+      }else{
+        notifMessage(res.data.message, NOTIF_TYPES.ERROR)
+      }
+    }catch{
+      notifMessage(ERROR_CONSTANTS.NETWORK_ERROR, NOTIF_TYPES.ERROR)
+      return {"status": false}
+    }
+  }
+
+  async getAllColors(){
+    try{
+      const res = await axios.get(BASE_URL + "/" + GET_COLORS)
+      if(!res.data.status){
+        notifMessage(res.data.message, NOTIF_TYPES.ERROR)
+      }
+      return res.data.colors
+    }catch{
+      notifMessage(ERROR_CONSTANTS.NETWORK_ERROR, NOTIF_TYPES.ERROR)
+      return {"status": false}
+    }
+  }
+
+  async removeColor(colorId){
+    try{
+      const res = await axios.delete(BASE_URL + "/" + REMOVE_COLORS + "/" + colorId)
+      if(res.data.status){
+        notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
+      }else{
+        notifMessage(res.data.message, NOTIF_TYPES.ERROR)
+      }
+    }catch{
+      notifMessage(ERROR_CONSTANTS.NETWORK_ERROR, NOTIF_TYPES.ERROR)
+      return {"status": false}
+    }
+  }
+
+  async getColorById(colorId){
+    try{
+      const res = await axios.get(BASE_URL + "/" + GET_COLORS_BYID + "/" + colorId)
+      if(res.data.status){
+        notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
+        return res.data
+      }else{
+        notifMessage(res.data.message, NOTIF_TYPES.ERROR)
+      }
+    }catch{
+      notifMessage(ERROR_CONSTANTS.NETWORK_ERROR, NOTIF_TYPES.ERROR)
+      return {"status": false}
+    }
+  }
+
+  async updateColor(colorId,colorData){
+    
+    delete colorData['_id']; 
+    delete colorData['type']; 
+    delete colorData['creationTime']; 
+    delete colorData['status']; 
+    try{
+      const res = await axios.put(BASE_URL + "/" + UPDATE_COLORS + "/" + colorId, colorData)
+      if(res.data.status){
+        notifMessage(res.data.message, NOTIF_TYPES.SUCCESS)
+      }else{
+        notifMessage(res.data.message, NOTIF_TYPES.ERROR)
+      }
+    }catch{
+      notifMessage(ERROR_CONSTANTS.NETWORK_ERROR, NOTIF_TYPES.ERROR)
+      return {"status": false}
+    }
+  }
+
+  /**USER */
   async blockUser(uid){
     try{
       const headers = await generateHeaders

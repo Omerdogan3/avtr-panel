@@ -1,15 +1,3 @@
-/**
- * Head
- * C_Jawline1
- * Eye
- * C_Eyes1
- * Eyebrows
- * C_Brows1
- * Lips
- * Lips
- * Hairs
- * hair
- */
 export const Head = [
   {
     values: [

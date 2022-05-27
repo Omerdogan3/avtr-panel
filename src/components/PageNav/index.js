@@ -14,11 +14,18 @@ import {Link} from "react-router-dom";
 const navbarRoutes = [
   {component: <BlendShapes/>, id: "blendshapes"},
   {component: <PanelUsers/>, id: "panelUsers"},
+  {component: <ColorPicker/>, id: "colors"},
 ]
-
+function ColorPicker(){
+  return(
+        <Nav.Item as={Link} to="/colors" eventKey="1">
+          Colors
+        </Nav.Item>
+  )
+}
 function PanelUsers(){
   return(
-        <Nav.Item as={Link} to="/panelUsers" eventKey="5">
+        <Nav.Item as={Link} to="/panelUsers" eventKey="2">
           Panel Users
         </Nav.Item>
   )
@@ -26,7 +33,7 @@ function PanelUsers(){
 
 function BlendShapes(){
   return(
-    <Nav.Item as={Link} to="/blendshapes" eventKey="5">
+    <Nav.Item as={Link} to="/blendshapes" eventKey="3">
     Blend Shapes
   </Nav.Item>
   )

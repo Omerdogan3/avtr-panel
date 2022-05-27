@@ -22,8 +22,8 @@ import {OrbitControls} from './OrbitControls';
   const api = { state: 'Walking' };
 
   function init() {
-    camera = new THREE.PerspectiveCamera(40, 250/300 , 0.25, 100 );
-    camera.position.set( -0.2, 0.2, 0.8 );
+    camera = new THREE.PerspectiveCamera(40, 280/300 , 0.25, 100 );
+    camera.position.set( 0, 0.2, 0.8 );
     camera.lookAt( new THREE.Vector3( 0, 0, 0 ) );
     scene = new THREE.Scene();
     clock = new THREE.Clock();
@@ -47,7 +47,7 @@ import {OrbitControls} from './OrbitControls';
     renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true  } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setClearColor( 0x000000, 0 );
-    renderer.setSize(300, 350);
+    renderer.setSize(280, 300);
     renderer.outputEncoding = THREE.sRGBEncoding;
      //controls
      const controls = new OrbitControls( camera, renderer.domElement );
@@ -81,12 +81,23 @@ import {OrbitControls} from './OrbitControls';
    if(shapex=='Eyes'){
     const head = model.getObjectByName( 'Head' );
     const plane = head.children[0];
-    plane.morphTargetInfluences[shapeindex]=val2
+    const exp = Object.keys(plane.morphTargetDictionary).map((e,i)=>{return e==defshapename?i:null})
+    const ind = parseFloat(exp.toString().replaceAll(',',''))
+    plane.morphTargetInfluences[ind]=val2
    }
    if(shapex=='Head'){
     const head = model.getObjectByName( 'Head' );
     const plane = head.children[0];
-    plane.morphTargetInfluences[14+shapeindex]=val2
+    const exp = Object.keys(plane.morphTargetDictionary).map((e,i)=>{return e==defshapename?i:null})
+    const ind = parseFloat(exp.toString().replaceAll(',',''))
+    plane.morphTargetInfluences[ind]=val2
+   }
+   if(shapex=='Lips'){
+    const head = model.getObjectByName( 'Head' );
+    const plane = head.children[0];
+    const exp = Object.keys(plane.morphTargetDictionary).map((e,i)=>{return e==defshapename?i:null})
+    const ind = parseFloat(exp.toString().replaceAll(',',''))
+    plane.morphTargetInfluences[ind]=val2
    }
    if(shapex=='Hairs'){
     const hair = model.getObjectByName( shapex.replace('s','')+`_${shapeindex+1}`);
@@ -103,7 +114,7 @@ import {OrbitControls} from './OrbitControls';
 
   return (
     <>
-   <div ref={box} style={{overflow:'visible',zIndex:1000}}></div>
+   <div ref={box}></div>
    </>
   )
 }

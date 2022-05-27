@@ -78,7 +78,7 @@ function BlendShapes({id}) {
                   id={index}>
                    <PanelGroup accordion bordered>
           {
-            blendShapes.filter(e=>e.type==shapes).map((shape, index)=> {
+            blendShapes && blendShapes.filter(e=>e.type==shapes).map((shape, index)=> {
               return(
                 <Panel 
                   shaded 
