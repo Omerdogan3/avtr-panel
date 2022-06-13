@@ -100,8 +100,8 @@ import {OrbitControls} from './OrbitControls';
     plane.morphTargetInfluences[ind]=val2
    }
    if(shapex=='Hairs'){
-    const hair = model.getObjectByName( shapex.replace('s','')+`_${shapeindex+1}`);
-    hair.visible=val2==1?true:false
+    // const hair = model.getObjectByName( shapex.replace('s','')+`_${shapeindex+1}`);
+    // hair.visible=val2==1?true:false
    }
   }
   

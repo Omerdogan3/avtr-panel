@@ -61,7 +61,8 @@ const handleShape= (defshapename,val,i)=>{
         {values&& values.map((defshapename,i)=>(
           <>
         <p>{defshapename}</p>
-        {defshapename.includes(`hair_${i+1}`)?
+        {
+          defshapename.includes(`hair_${i+1}`)?
           <Slider
           size="small"
           onChange={(e,val)=>handleShape(defshapename,val,i)}
